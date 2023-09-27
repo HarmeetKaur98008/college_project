@@ -1,0 +1,36 @@
+<html>
+<head>
+<title> CMS </title>
+<style>
+	* {font-size: 30px; }
+	body {background: rgb(6,2,84);
+	background: linear-gradient(153deg, rgba(6,2,84,1) 7%, rgba(6,199,175,1) 43%, rgba(15,221,237,1) 94%); }
+		.nav {background-color:#c3fbf4; height:40px;}
+	.nav a {color:navyblue;text-decoration:none;margin:2%;}
+</style>
+</head>
+<body>
+<center>
+	<div class="nav">
+		<a href="{% url 'add' %}"> Add Assignment </a>
+		<a href="{% url 'view' %}"> View Submissions </a>
+	</div>
+	<br>
+	<h1> Add Page </h1>
+	<form method ="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+		<table>
+			{{ fm.as_table }}
+		</table>
+		<br>
+	
+	<button onclick="window.location.href = 'addmin';">
+ADD</button>
+		<a href="{% url 'thome' %}"> BACK </a>
+	</form>
+	<h1> {{ msg }} </h1>
+ 
+
+</center>
+</body>
+</html>	

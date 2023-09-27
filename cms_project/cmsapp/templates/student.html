@@ -1,0 +1,42 @@
+<html>
+<head>
+<title> CMS </title>
+<style>
+	* {font-size: 30px; }
+	body {background: rgb(6,2,84);
+	background: linear-gradient(153deg, rgba(6,2,84,1) 7%, rgba(6,199,175,1) 43%, rgba(15,221,237,1) 94%); }
+		.nav {background-color:#c3fbf4; height:40px;}
+	.nav a {color:navyblue;text-decoration:none;margin:2%;}
+</style>
+</head>
+<body>
+<center>
+	<div class="nav">
+		<a href="{% url 'home' %}"> Home </a>
+		<a href="{% url 'student' %}"> Student </a>
+	</div>
+	<h1> Student Page </h1>
+	
+		
+	<table border="3" style="width:50%;">
+		<tr> 
+			<th> Subject </th>
+			<th> Assignment </th>
+			<th> Reference Material </th>
+			<th> Submit </td>
+		</tr>
+
+	{% for d in data %}
+		<tr style="text-align:center;">
+			<td> {{ d.Subject }} </td>
+			<td> {{ d.Assignment}} </td>
+			<td> <a href = {{ d.RMaterial.url }}> View </a> </td>
+			<td> <a href="{% url 'upload' %}"> Upload Assignment </a> </td>	
+
+		</tr>
+	{% endfor %}
+	</table>
+</center>
+</body>
+</html>
+

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="nav">
+		<a href="{% url 'home' %}"> Home </a>
+		<a href="{% url 'student' %}"> Student </a>
+	</div>
+	<br>
+	<h1> Welcome {{ user.username }} </h1>
+
+{% endblock %}

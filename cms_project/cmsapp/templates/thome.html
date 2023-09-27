@@ -1,0 +1,10 @@
+{% extends 'tbase.html' %}
+{% block content %}
+	<div class="nav">
+		<a href="{% url 'home' %}"> Home </a>
+		<a href="{% url 'add' %}"> Admin </a>
+	</div>
+	<br>
+	<h1> Welcome {{ user.username }} </h1>
+
+{% endblock %}
